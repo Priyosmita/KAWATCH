@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  font-family: 'Spectral', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,16 +21,67 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  font-family: 'Spectral', sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.rotate270 {
+  transform: rotate(270deg);
+}
+
+.opacity100 {
+  opacity: 100 !important;
+}
+
+@keyframes tilt {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+.hover\:tilt:hover {
+  transform: rotate(10deg);
+}
+
+.footerHeight {
+  height: 575px;
+}
+
+.cardAdjust {
+  margin-top: 50px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.marginForAbout {
+  margin-right: 2rem; /* Adjust this value to reduce the gap */
+}
+
+.aboutPriyosImg {
+  width: 150px;
+  height: 329px;
+  margin-right: 1rem;
+}
+
+.aboutRijurajImg {
+  width: 210px;
+  height: 330px;
+  margin-left: 1rem;
+}
+
+.flex1 {
+  gap: 200px; /* Adjust this value to control the gap between elements */
+}
+
+.gapx {
+  gap: 80px;
 }
