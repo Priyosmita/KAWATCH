@@ -72,7 +72,7 @@ const LandingPage = () => {
     <div className="bg-gradient-to-r from-gray-400 to-indigo-600 bg-gradient-to-bl from-slate-900 via-blue-900 to-slate-900 min-h-screen flex flex-col justify-between overflow-hidden">
       {/* Left side texts sign up buttons */}
       <Header/>
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between mt-32">
         <div className="mt-36 ml-36 text-10xl cursor-default">
           KAWATCH
           <div className="text-4xl mt-10 cursor-default">

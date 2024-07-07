@@ -51,7 +51,7 @@ const Header = () => {
         </span>
       </div>
       <nav className="flex space-x-6 items-center gap-x-9">
-        <Link href="/about" legacyBehavior>
+        <Link href="/pages/about" legacyBehavior>
           <a className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]">
             About
           </a>

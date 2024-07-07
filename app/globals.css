@@ -63,19 +63,22 @@ body {
 }
 
 .marginForAbout {
-  margin-right: 2rem; /* Adjust this value to reduce the gap */
+  margin-right: 1rem; /* Adjust this value to reduce the gap */
 }
 
 .aboutPriyosImg {
-  width: 150px;
-  height: 329px;
-  margin-right: 1rem;
+  width: 350px;
+  height: 350px;
+  /* margin-right: 50px; */
+  margin-left: 100px;
+  margin-top: 20px;
 }
 
 .aboutRijurajImg {
-  width: 210px;
-  height: 330px;
-  margin-left: 1rem;
+  width: 420px;
+  height: 420px;
+  margin-right: 250px;
+  margin-bottom: 50px;
 }
 
 .flex1 {
@@ -84,4 +87,16 @@ body {
 
 .gapx {
   gap: 80px;
+}
+
+
+.hover-text {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(100%); /* Start hidden behind the image */
+}
+
+.relative:hover .hover-text {
+  transform: translateY(-100%);
+  opacity: 1;
 }
