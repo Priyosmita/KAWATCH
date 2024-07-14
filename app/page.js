@@ -6,6 +6,9 @@ import { useEffect, useState } from 'react';
 import Header from "./components/Header";
 import LandingPage from "./pages/LandingPage";
 import Dashboard from './pages/Dashboard';
+import Dummy from './components/Dummy';
+import { grid } from 'ldrs'
+
 export default function Home() {
   const { isLoaded, userId } = useAuth();
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -15,9 +18,11 @@ export default function Home() {
       setIsSignedIn(!!userId);
     }
   }, [isLoaded, userId]);
-
+  grid.register()
   if (!isLoaded) {
-    return <div>Loading...</div>; // Optional: Add a loading state
+    return <div className='min-h-screen flex justify-center items-center'><l-grid size="200" speed="1.5" color="white" /></div>
+     // Optional: Add a loading state
+    
   }
 
   return (

@@ -12,6 +12,7 @@ const Layout = ({ children }) => {
     <html lang="en">
       <head>
         <title>Kawatch</title>
+        <link rel="icon" href="/favicon.ico" sizes='any'/>  {/* fav icon */}
         <link href="https://fonts.googleapis.com/css2?family=Playwrite+ES+Deco:wght@100..400&display=swap" rel="stylesheet" />
       </head>
       <body>

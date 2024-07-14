@@ -4,12 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import '../globals.css';
 import { SignOutButton } from '@clerk/nextjs';
-
+import { useAuth } from '@clerk/nextjs';
 
 const Header = () => {
+  const { isLoaded, userId } = useAuth();
   const [scrollY, setScrollY] = useState(0);
   const [hidden, setHidden] = useState(false);
-
+  const isSignedIn = isLoaded && !!userId;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,13 +23,11 @@ const Header = () => {
       setScrollY(currentScrollY);
     };
 
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [scrollY]);
-
 
   return (
     <header
@@ -37,7 +36,7 @@ const Header = () => {
       }`}
     >
       <div className="flex items-center space-x-4">
-        <Link href="/LandingPage">
+        <Link href={isSignedIn ? "/pages/Home2" : "/"}>
           <Image
             src="/assets/logo2.png"
             alt="AML Logo"
@@ -56,7 +55,7 @@ const Header = () => {
             About
           </a>
         </Link>
-        <SignOutButton className='text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]'/>
+        <SignOutButton className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]" />
         <Link href="/profile" legacyBehavior>
           <a>
             <Image
@@ -73,7 +72,4 @@ const Header = () => {
   );
 };
 
-
 export default Header;
-
-
