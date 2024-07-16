@@ -69,11 +69,11 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-gray-400 to-indigo-600 bg-gradient-to-bl from-slate-900 via-blue-900 to-slate-900 min-h-screen flex flex-col justify-between overflow-hidden">
+    <div className="backgroundGradient min-h-screen flex flex-col justify-between overflow-hidden">
       {/* Left side texts sign up buttons */}
       <Header/>
-      <div className="flex flex-row justify-between mt-32">
-        <div className="mt-36 ml-36 text-10xl cursor-default">
+      <div className="flex flex-row justify-between mt-32 ml-5">
+        <div className="mt-36 ml-36 text-9xl cursor-default">
           KAWATCH
           <div className="text-4xl mt-10 cursor-default">
             <p className="mb-5">Your Shield Against Financial Crimes</p>
@@ -91,7 +91,7 @@ const LandingPage = () => {
 
         {/* Right side logo */}
         <div
-          className="mt-36 mr-36"
+          className="mt-28 mr-36"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           style={tiltStyle}

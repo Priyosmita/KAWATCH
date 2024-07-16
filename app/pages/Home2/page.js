@@ -9,6 +9,7 @@ import Link from 'next/link';
 import Header from '@/app/components/Header';
 // import Footer from '../components/Footer';
 import Footer from '@/app/components/Footer';
+import Dashboard from '../Dashboard';
 
 const LandingPage = () => {
   // State for logo tilt
@@ -72,26 +73,22 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-gray-400 to-indigo-600 bg-gradient-to-bl from-slate-900 via-blue-900 to-slate-900 min-h-screen flex flex-col justify-between overflow-hidden">
+    <div className="backgroundGradient min-h-screen flex flex-col justify-between overflow-hidden">
       {/* Left side texts sign up buttons */}
       <Header/>
-      <div className="flex flex-row justify-between mt-32">
-        <div className="mt-36 ml-36 text-10xl cursor-default">
+      <div className="flex flex-row justify-between mt-20">
+        <div className="mt-36 ml-36 text-10xl cursor-default michroma-regular">
           KAWATCH
           <div className="text-4xl mt-10 cursor-default">
             <p className="mb-5">Your Shield Against Financial Crimes</p>
             <p>Where Innovation meets Integrity</p>
           </div>
-          {/* <div className="flex flex-row justify-between mt-20">
-            <Link href='/pages/authentication/signup'  legacyBehavior>
-              <a className="text-4xl rounded-full bg-black hover:bg-gray-500 p-5 transition duration-300 hover:scale-110">Sign Up</a>
-            </Link>
-            <Link href='/pages/authentication/signin'  legacyBehavior>
-              <a className="text-4xl rounded-full bg-black hover:bg-gray-500 p-5 transition duration-300 hover:scale-110">Sign In</a>
-            </Link>
-          </div> */}
+          <div className="flex flex-row justify-between mt-20">
+            <Link href='/'  legacyBehavior>
+              <a className="text-4xl rounded-full bg-black hover:bg-gray-500 px-20 pt-5 pb-5 transition duration-300 hover:scale-110">Back to Dashboard</a>
+            </Link>           
+          </div>
         </div>
-
         {/* Right side logo */}
         <div
           className="mt-36 mr-36"
