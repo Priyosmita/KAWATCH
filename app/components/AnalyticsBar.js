@@ -25,8 +25,8 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
 
   const BulkTable = () => (
     <div className='w-full overflow-y-auto max-h-96 p-4 bg-gray-100 text-black rounded-lg'>
-      <table className='w-full'>
-        <thead className='sticky top-0 bg-white'>
+      <table className='w-full bg-transparent'>
+        <thead className='sticky top-0 shadow-md'>
           <tr>
             <th className='sticky top-0 bg-white z-10'>Record</th>
             <th className='sticky top-0 bg-white z-10'>Prediction</th>
@@ -37,10 +37,10 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
         <tbody>
           {filteredResults.map((result, index) => (
             <tr key={index}>
-              <td>{bulkResults.indexOf(result) + 1}</td>
-              <td>{result.prediction === 0 ? "No Money Laundering" : "Laundering Detected"}</td>
-              <td>{result.probability && result.probability.length > 1 ? result.probability[1].toFixed(3) : 'N/A'}</td>
-              <td>{result.probability && result.probability.length > 0 ? result.probability[0].toFixed(3) : 'N/A'}</td>
+              <td className='text-center p-2 border-b-2'>{bulkResults.indexOf(result) + 1}</td>
+              <td className='text-center p-2 border-b-2'>{result.prediction === 0 ? "No Money Laundering" : "Laundering Detected"}</td>
+              <td className='text-center p-2 border-b-2'>{result.probability && result.probability.length > 1 ? result.probability[1].toFixed(3) : 'N/A'}</td>
+              <td className='text-center p-2 border-b-2'>{result.probability && result.probability.length > 0 ? result.probability[0].toFixed(3) : 'N/A'}</td>
             </tr>
           ))}
         </tbody>
@@ -65,14 +65,34 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
 
     return (
       <div className='outline outline-slate-600 rounded-lg p-3 m-3 mt-5 w-101 min-h-screen'>
-        <h3 className='text-2xl mb-4'>Predictions:</h3>
+        <h3 className='text-5xl mb-4'>Predictions:</h3>
         <div className='mb-4'>
-          <label className='mr-2'>Filter:</label>
-          <select value={filter} onChange={handleFilterChange} className='p-2 border rounded text-black'>
-            <option value='all'>All</option>
-            <option value='1'>Laundering</option>
-            <option value='0'>Not Laundering</option>
-          </select>
+          <label className='mr-2 text-2xl'>Filter :</label>
+          <div className="relative inline-block w-40 h-12">
+            <select
+              value={filter}
+              onChange={handleFilterChange}
+              className="absolute inset-0 opacity-0 text-white bg-transparent peer w-full h-full p-2 border rounded appearance-none"
+            >
+              <option className="bg-white text-black" value="all">All</option>
+              <option className="bg-white text-black" value="1">Laundering</option>
+              <option className="bg-white text-black" value="0">Not Laundering</option>
+            </select>
+            <div className="pointer-events-none p-2 border rounded bg-transparent text-white flex items-center justify-between w-full h-full">
+              <span>
+                {filter === 'all' ? 'All' : filter === '1' ? 'Laundering' : 'Not Laundering'}
+              </span>
+              <svg
+                className="w-4 h-4"
+                fill="white"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path fillRule="evenodd" d="M10 12a1 1 0 01-.707-.293l-3-3a1 1 0 011.414-1.414L10 9.586l2.293-2.293a1 1 0 011.414 1.414l-3 3A1 1 0 0110 12z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </div>
+
         </div>
         <div className='flex flex-col items-center'>
           <BulkTable />

@@ -106,11 +106,17 @@ input {
   background-color: rgba(255, 255, 255, 1) !important; /* Full opacity */
 }
 
+/* for filter in bulk predictions */
+.bgOpaqueFilter {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
 /* bg gradient */
 .backgroundGradient {
   background: rgb(3,59,126);
 background: radial-gradient(circle, rgba(3,59,126,1) 0%, rgba(11,10,98,1) 48%, rgba(2,1,20,1) 100%);
 }
+
 .pie-chart-container {
   margin-top: 20px;
   display: flex;
