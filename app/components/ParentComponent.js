@@ -5,12 +5,20 @@ import AnalyticsBar from './AnalyticsBar';
 const ParentComponent = () => {
   const [prediction, setPrediction] = useState(null);
   const [probability, setProbability] = useState(null);
+  const [bulkResults, setBulkResults] = useState([]);
 
-  // implementing here so that it is shown in analytics bar
   return (
-    <div className="flex">
-      <TransactionBar setPrediction={setPrediction} setProbability={setProbability} />  
-      <AnalyticsBar prediction={prediction} probability={probability} />
+    <div className='flex flex-row justify-between'>
+      <TransactionBar
+        setPrediction={setPrediction}
+        setProbability={setProbability}
+        setBulkResults={setBulkResults}
+      />
+      <AnalyticsBar
+        prediction={prediction}
+        probability={probability}
+        bulkResults={bulkResults}
+      />
     </div>
   );
 };

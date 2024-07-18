@@ -11,7 +11,7 @@ const glowPlugin = {
   beforeDraw: function (chart) {
     const ctx = chart.ctx;
     ctx.save();
-    ctx.filter = 'drop-shadow(10px 10px 10px rgba(255, 99, 132, 0.8))'; // Adjust the shadow properties as needed
+    ctx.filter = 'drop-shadow(10px 10px 10px rgba(255, 99, 132, 0.8)); margin-bottom: 100px;'; // Adjust the shadow properties as needed
     chart.update();
   },
   afterDraw: function (chart) {
