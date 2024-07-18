@@ -1,80 +1,68 @@
-// // Ensure this code runs after the DOM is fully loaded
-// document.addEventListener('DOMContentLoaded', (event) => {
-//     // Get the context of the canvas element we want to select
-//     const ctx = document.getElementById('interpolationChart').getContext('2d');
-  
-//     // Create the data and options for the chart
-//     const data = {
-//       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-//       datasets: [{
-//         label: 'Dataset',
-//         data: [0, 10, 5, 2, 20, 30, 45],
-//         borderColor: 'rgba(75, 192, 192, 1)',
-//         backgroundColor: 'rgba(75, 192, 192, 0.2)',
-//         fill: false,
-//         tension: 0.4, // Interpolation effect
-//         cubicInterpolationMode: 'monotone' // Change to 'default' or 'monotone' for different effects
-//       }]
-//     };
-  
-//     const options = {
-//       responsive: true,
-//       plugins: {
-//         legend: {
-//           position: 'top',
-//         },
-//         title: {
-//           display: true,
-//           text: 'Interpolation Mode Line Chart'
-//         }
-//       },
-//       scales: {
-//         x: {
-//           display: true,
-//           title: {
-//             display: true,
-//             text: 'Month'
-//           }
-//         },
-//         y: {
-//           display: true,
-//           title: {
-//             display: true,
-//             text: 'Value'
-//           }
-//         }
-//       }
-//     };
-  
-//     // Create the chart
-//     const interpolationChart = new Chart(ctx, {
-//       type: 'line',
-//       data: data,
-//       options: options
-//     });
-//   });
-  
+import React from 'react';
+import { Line } from 'react-chartjs-2';
+import 'chart.js/auto';
 
+const LineChart = ({ bulkResults }) => {
+  const labels = bulkResults.map((_, index) => index + 1);
+  const negativeData = bulkResults.map(result => result.probability[0].toFixed(3));
+  const positiveData = bulkResults.map(result => result.probability[1].toFixed(3));
 
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Negative Probability',
+        // labelColor: '#ACABAD',
+        data: negativeData,
+        borderColor: '#FF6384',
+        fill: false,
+        tension: 0.1,
+      },
+      {
+        label: 'Positive Probability',
+        labelColor: '#ACABAD',
+        data: positiveData,
+        borderColor: '#36A2EB',
+        fill: false,
+        tension: 0.1,
+      },
+    ],
+  };
 
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        title: {
+          display: true,
+          color: '#ACABAD',
+          text: "Record ID",
+        },
+        grid: {
+          color: '#ACABAD',
+        },
+        ticks: {
+          color: '#ACABAD',
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          color: '#ACABAD',
+          text: "Probability",
+        },
+        grid: {
+          color: '#ACABAD',
+        },
+        ticks: {
+          color: '#ACABAD',
+        },
+      },
+    },
+  };
 
-// LineChart.js
-import React, { useEffect } from 'react';
-import Chart from 'chart.js'; // Ensure correct import
-
-const LineChart = ({ data, options }) => {
-  useEffect(() => {
-    const ctx = document.getElementById('interpolationChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'line',
-      data: data,
-      options: options
-    });
-  }, [data, options]);
-
-  return (
-    <canvas id="interpolationChart" width="600" height="400"></canvas>
-  );
+  return <Line data={data} options={options} />;
 };
 
 export default LineChart;

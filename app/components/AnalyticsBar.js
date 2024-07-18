@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PieChart from './Charts/PieChart.js';
 import LineChart from './Charts/LineChart.js';
+import ScatterChart from './Charts/ScatterChart.js';
+import BarChart from './Charts/BarChart.js';
 import '../globals.css';
 
 const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
@@ -107,6 +109,21 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
             <PieChart data={pieChartData} />
           </div>
         </div>
+        {bulkResults && bulkResults.length > 0 && (
+          <div className='mt-8 h-80'>
+            <LineChart bulkResults={bulkResults} />
+          </div>
+        )}
+        {bulkResults && bulkResults.length > 0 && (
+          <div className='mt-8 h-80'>
+            <ScatterChart bulkResults={bulkResults} />
+          </div>
+        )}
+        {bulkResults && bulkResults.length > 0 && (
+          <div className='mt-8 h-80'>
+            <BarChart bulkResults={bulkResults} />
+          </div>
+        )}
       </div>
     );
   }
