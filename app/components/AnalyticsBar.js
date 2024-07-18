@@ -21,7 +21,7 @@ const AnalyticsBar = ({ prediction, probability }) => {
   };
 
   if (!probability || probability.length < 2) {
-    return <p>No prediction available</p>;
+    return <p className='outline outline-slate-600 rounded-lg p-3 m-3 mt-5 w-101 min-h-screen'>No prediction available</p>;
   }
 
   const data = {
