@@ -2,41 +2,18 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 
+
 const BarChart = ({ bulkResults }) => {
     const labels = bulkResults.map((_, index) => index + 1);
     const negativeData = bulkResults.map(result => result.probability[0].toFixed(3));
     const positiveData = bulkResults.map(result => result.probability[1].toFixed(3));
 
-    const lineData = {
-        labels,
-        datasets: [
-            {
-                label: 'Negative Probability (Line)',
-                labelColor: '#ACABAD',
-                data: negativeData,
-                borderColor: '#FF6384',
-                fill: false,
-                tension: 0.1,
-                type: 'line',
-            },
-            {
-                label: 'Positive Probability (Line)',
-                labelColor: '#ACABAD',
-                data: positiveData,
-                borderColor: '#36A2EB',
-                fill: false,
-                tension: 0.1,
-                type: 'line',
-            },
-        ],
-    };
 
-    const barData = {
+    const data = {
         labels,
         datasets: [
             {
                 label: 'Negative Probability',
-                // labelColor: '#ACABAD',
                 data: negativeData,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255, 99, 132, 1)',
@@ -45,7 +22,6 @@ const BarChart = ({ bulkResults }) => {
             },
             {
                 label: 'Positive Probability',
-                labelColor: '#ACABAD',
                 data: positiveData,
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
@@ -54,6 +30,7 @@ const BarChart = ({ bulkResults }) => {
             },
         ],
     };
+
 
     const options = {
         responsive: true,
@@ -83,16 +60,26 @@ const BarChart = ({ bulkResults }) => {
                 },
                 ticks: {
                     color: '#ACABAD',
+
+                },
+            },
+        },
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#ACABAD', // Change the color of the legend labels
                 },
             },
         },
     };
 
+
     return (
         <div>
-            <Bar data={barData} options={options} />
+            <Bar data={data} options={options} />
         </div>
     );
 };
+
 
 export default BarChart;

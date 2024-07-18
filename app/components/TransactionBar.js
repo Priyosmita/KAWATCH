@@ -54,7 +54,7 @@ const TransactionBar = ({ setPrediction, setProbability, setBulkResults }) => {
   };
 
   return (
-    <div className='outline outline-slate-600 rounded-lg p-6 ml-2 mr-1 mt-5 w-full max-w-md text-lg'>
+    <div className='outline outline-slate-600 rounded-lg p-6 ml-2 mr-1 mt-5 mb-4 w-full max-w-md text-lg'>
       <div className='mb-12 text-2xl'>
         <p>Prediction Type</p>
         <select

@@ -8,7 +8,6 @@ const ScatterChart = ({ bulkResults }) => {
         datasets: [
             {
                 label: "Probabilities",
-                // color: '#ACABAD',
                 data: bulkResults.map((result, index) => ({
                     x: result.probability[0], // Negative Probability
                     y: result.probability[1], // Positive Probability
@@ -57,11 +56,13 @@ const ScatterChart = ({ bulkResults }) => {
                 callbacks: {
                     label: function (context) {
                         const { x, y, id, prediction } = context.raw;
-                        return `Transaction ID: ${id}
-            ${prediction}
-            Negative Probability: ${x.toFixed(3)}
-            Positive Probability: ${y.toFixed(3)}`;
+                        return `Transaction ID: ${id}\n${prediction}\nNegative Probability: ${x.toFixed(3)}\nPositive Probability: ${y.toFixed(3)}`;
                     },
+                },
+            },
+            legend: {
+                labels: {
+                    color: '#ACABAD', // Change the color of the legend labels
                 },
             },
         },
