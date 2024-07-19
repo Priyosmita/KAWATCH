@@ -2,25 +2,35 @@ import React from "react";
 import { Scatter } from "react-chartjs-2";
 import "chart.js/auto";
 
-
 const ScatterChart = ({ bulkResults }) => {
     const data = {
         datasets: [
             {
-                label: "Probabilities",
-                data: bulkResults.map((result, index) => ({
+                label: "Not Money Laundering",
+                data: bulkResults.filter(result => result.prediction === 0).map((result, index) => ({
                     x: result.probability[0], // Negative Probability
                     y: result.probability[1], // Positive Probability
                     id: index + 1, // Transaction ID
-                    prediction: result.prediction === 0 ? "Negative" : "Positive", // Prediction text
+                    prediction: "Negative", // Prediction text
                 })),
-                backgroundColor: bulkResults.map((result) =>
-                    result.prediction === 0 ? "#36A2EB" : "#FF6384"
-                ),
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1,
+            },
+            {
+                label: "Money Laundering",
+                data: bulkResults.filter(result => result.prediction === 1).map((result, index) => ({
+                    x: result.probability[0], // Negative Probability
+                    y: result.probability[1], // Positive Probability
+                    id: index + 1, // Transaction ID
+                    prediction: "Positive", // Prediction text
+                })),
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1,
             },
         ],
     };
-
 
     const options = {
         scales: {
@@ -70,9 +80,8 @@ const ScatterChart = ({ bulkResults }) => {
         maintainAspectRatio: false,
     };
 
-
     return <Scatter data={data} options={options} />;
 };
 
-
 export default ScatterChart;
+
