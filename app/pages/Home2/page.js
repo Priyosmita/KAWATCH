@@ -188,7 +188,7 @@ const features = [
     image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
   },
   {
-    title: 'Regulatory Compliance',
+    title: 'Dual Mode Laundering Detection',
     image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
   }
 ];

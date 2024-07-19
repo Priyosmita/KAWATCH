@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import '../globals.css';
-import { SignOutButton } from '@clerk/nextjs';
+import { SignOutButton, UserButton } from '@clerk/nextjs';
 import { useAuth } from '@clerk/nextjs';
 
 const Header = () => {
@@ -31,9 +31,8 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-black w-full py-2 px-8 flex justify-between items-center z-10 fixed transition-transform duration-300 ${
-        hidden ? '-translate-y-full' : 'translate-y-0'
-      }`}
+      className={`bg-black w-full py-2 px-8 flex justify-between items-center z-10 fixed transition-transform duration-300 ${hidden ? '-translate-y-full' : 'translate-y-0'
+        }`}
     >
       <div className="flex items-center space-x-4">
         <Link href={isSignedIn ? "/" : "/"}>
@@ -50,23 +49,20 @@ const Header = () => {
         </span>
       </div>
       <nav className="flex space-x-6 items-center gap-x-9">
+        <Link href="/pages/manual" legacyBehavior>
+          <a className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]">
+            User Manual
+          </a>
+        </Link>
         <Link href="/pages/about" legacyBehavior>
           <a className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]">
             About
           </a>
         </Link>
         <SignOutButton className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]" />
-        <Link href="/profile" legacyBehavior>
-          <a>
-            <Image
-              src="/assets/user-profile.jpeg"
-              alt="User Profile"
-              width={50}
-              height={50}
-              className="transform duration-300 hover:scale-110 rounded-full hover:border-[#283456] hover:border-2"
-            />
-          </a>
-        </Link>
+        <div className="user-button-wrapper">
+          <UserButton />
+        </div>
       </nav>
     </header>
   );

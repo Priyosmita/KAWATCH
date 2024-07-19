@@ -154,3 +154,13 @@ background: radial-gradient(circle, rgba(3,59,126,1) 0%, rgba(11,10,98,1) 48%, r
 .MarginImg {
   margin-right: 300px;
 }
+
+.user-button-wrapper {
+  display: inline-block;
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+}
+
+.user-button-wrapper:hover {
+  transform: scale(1.8);
+}
