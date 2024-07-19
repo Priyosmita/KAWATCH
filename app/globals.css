@@ -119,3 +119,34 @@ background: radial-gradient(circle, rgba(3,59,126,1) 0%, rgba(11,10,98,1) 48%, r
   justify-content: center;
   align-items: center;
 }
+
+.transparent-input {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+.input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 2.5rem; /* Adjust height as needed */
+  border: 1px solid white;
+  border-radius: 0.25rem; /* Adjust border-radius as needed */
+}
+
+.input-field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem; /* Adjust padding as needed */
+  background-color: transparent;
+  color: black;
+  border: none;
+  box-sizing: border-box; /* Ensures padding does not affect width/height */
+}
+
+.input-field::placeholder {
+  color: gray; /* Adjust placeholder color as needed */
+}

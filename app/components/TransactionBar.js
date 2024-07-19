@@ -68,17 +68,19 @@ const TransactionBar = ({ setPrediction, setProbability, setBulkResults }) => {
       </div>
 
       {predictionType === 'Single Transaction' ? (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
           <p>Enter Amount</p>
-          <div className='mb-8'>
+          <div class="mb-8 bg-transparent">
             <input
-              className='w-full p-2 border border-gray-400 rounded text-black'
-              type='number'
-              placeholder='Amount'
+              class="w-full p-2 border border-gray-400 rounded text-black"
+              type="number"
+              placeholder="Amount"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
-            />
+               />
           </div>
+
+
           <div className='mb-8'>
             <p>Select Payment Currency</p>
             <select
@@ -201,12 +203,12 @@ const TransactionBar = ({ setPrediction, setProbability, setBulkResults }) => {
             </select>
           </div>
           <div className='flex justify-center'>
-          <button
-            type='submit'
-            className='w-3/4 p-2 text-2xl rounded-full bg-[#39509b] hover:bg-[#94d5f8] transition duration-300 hover:scale-110 hover:text-black'
-          >
-            Predict
-          </button>
+            <button
+              type='submit'
+              className='w-3/4 p-2 text-2xl rounded-full bg-[#39509b] hover:bg-[#94d5f8] transition duration-300 hover:scale-110 hover:text-black'
+            >
+              Predict
+            </button>
           </div>
         </form>
       ) : (
