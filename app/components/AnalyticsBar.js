@@ -75,7 +75,7 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
 
     return (
       <div className='outline outline-slate-600 rounded-lg p-3 m-3 mt-5 w-101 min-h-screen'>
-        <h3 className='text-5xl mb-4'>Predictions:</h3>
+        <h3 className='text-5xl mb-4 mt-3'>Predictions:</h3>
         <div className='mb-4'>
           <label className='mr-2 text-2xl'>Filter :</label>
           <div className="relative inline-block w-40 h-12">
@@ -110,17 +110,17 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
           </div>
         </div>
         {bulkResults && bulkResults.length > 0 && (
-          <div className='mt-8 h-80'>
+          <div className='mt-16 h-80'>
             <LineChart bulkResults={bulkResults} />
           </div>
         )}
         {bulkResults && bulkResults.length > 0 && (
-          <div className='mt-8 h-80'>
+          <div className='mt-11 h-80'>
             <ScatterChart bulkResults={bulkResults} />
           </div>
         )}
         {bulkResults && bulkResults.length > 0 && (
-          <div className='mt-8 h-80'>
+          <div className='mt-11 h-80'>
             <BarChart bulkResults={bulkResults} />
           </div>
         )}
@@ -160,10 +160,12 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
     <div className='outline outline-slate-600 rounded-lg p-3 m-3 mt-5 w-101 min-h-screen'>
       {prediction !== null && probability !== null ? (
         <div>
-          <h3 className='text-5xl'>Prediction: {prediction === 0 ? "No Money Laundering" : "Laundering Detected"}</h3>
-          <p className='text-3xl'>Money laundering: {probability[1].toFixed(3)}</p>
-          <p className='text-3xl'>Not money laundering: {probability[0].toFixed(3)}</p>
-          <PieChart data={data} options={options} />
+          <h3 className='text-5xl mt-3 mb-3'>Prediction: {prediction === 0 ? "No Money Laundering" : "Laundering Detected"}</h3>
+          <p className='text-3xl mb-3'>Money laundering: {probability[1].toFixed(3)}</p>
+          <p className='text-3xl mb-3'>Not money laundering: {probability[0].toFixed(3)}</p>
+          <div className='flex justify-center'>
+            <PieChart data={data} options={options}/>
+          </div>
         </div>
       ) : (
         <div className='text-5xl'>No prediction available</div>

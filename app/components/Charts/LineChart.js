@@ -15,7 +15,7 @@ const LineChart = ({ bulkResults }) => {
       {
         label: 'Not Money Laundering',
         data: negativeData,
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
         borderColor: 'rgba(54, 162, 235, 1)',
         borderWidth: 1,
         // borderColor: '#FF6384',
@@ -25,7 +25,7 @@ const LineChart = ({ bulkResults }) => {
       {
         label: 'Money Laundering',
         data: positiveData,
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
         borderColor: 'rgba(255, 99, 132, 1)',
         borderWidth: 1,
         // borderColor: '#36A2EB',

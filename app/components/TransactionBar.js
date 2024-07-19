@@ -200,12 +200,14 @@ const TransactionBar = ({ setPrediction, setProbability, setBulkResults }) => {
               <option value="Cash Withdrawal">Cash Withdrawal</option>
             </select>
           </div>
+          <div className='flex justify-center'>
           <button
             type='submit'
-            className='w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-700'
+            className='w-3/4 p-2 text-2xl rounded-full bg-[#39509b] hover:bg-[#94d5f8] transition duration-300 hover:scale-110 hover:text-black'
           >
             Predict
           </button>
+          </div>
         </form>
       ) : (
         <form onSubmit={handleBulkSubmit}>
@@ -218,12 +220,14 @@ const TransactionBar = ({ setPrediction, setProbability, setBulkResults }) => {
               accept='.csv'
             />
           </div>
-          <button
-            type='submit'
-            className='w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-700'
-          >
-            Upload and Predict
-          </button>
+          <div className='flex justify-center'>
+            <button
+              type='submit'
+              className='w-3/4 p-2 text-2xl rounded-full bg-[#39509b] hover:bg-[#94d5f8] transition duration-300 hover:scale-110 hover:text-black'
+            >
+              Upload and Predict
+            </button>
+          </div>
         </form>
       )}
     </div>
