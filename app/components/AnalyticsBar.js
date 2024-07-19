@@ -9,27 +9,22 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
   const [filter, setFilter] = useState('all');
   const [filteredResults, setFilteredResults] = useState([]);
 
-
   useEffect(() => {
     // Initialize with all results
     setFilteredResults(bulkResults || []);
   }, [bulkResults]);
 
-
   const handleFilterChange = (event) => {
     const selectedFilter = event.target.value;
     setFilter(selectedFilter);
-
 
     const filteredData = bulkResults.filter((result) => {
       if (selectedFilter === 'all') return true;
       return result.prediction === parseInt(selectedFilter);
     });
 
-
     setFilteredResults(filteredData);
   };
-
 
   const BulkTable = () => (
     <div className='mt-8 max-h-80 overflow-y-auto w-full outline'>
@@ -43,9 +38,9 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
           </tr>
         </thead>
         <tbody>
-          {bulkResults.map((result, index) => (
+          {filteredResults.map((result, index) => (
             <tr key={index}>
-              <td className='text-center p-2 border-b-2'>{bulkResults.indexOf(result) + 1}</td>
+              <td className='text-center p-2 border-b-2'>{index + 1}</td>
               <td className='text-center p-2 border-b-2'>{result.prediction === 0 ? "No Money Laundering" : "Laundering Detected"}</td>
               <td className='text-center p-2 border-b-2'>{result.probability && result.probability.length > 1 ? result.probability[1].toFixed(3) : 'N/A'}</td>
               <td className='text-center p-2 border-b-2'>{result.probability && result.probability.length > 0 ? result.probability[0].toFixed(3) : 'N/A'}</td>
@@ -55,7 +50,6 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
       </table>
     </div>
   );
-
 
   if (bulkResults && bulkResults.length > 0) {
     const pieChartData = {
@@ -72,7 +66,6 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
       }],
     };
 
-
     return (
       <div className='outline outline-slate-600 rounded-lg p-3 m-3 mt-5 w-101 min-h-screen'>
         <h3 className='text-5xl mb-4 mt-3'>Predictions:</h3>
@@ -85,8 +78,8 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
               className="absolute inset-0 opacity-0 text-white bg-transparent peer w-full h-full p-2 border rounded appearance-none"
             >
               <option className="bg-white text-black" value="all">All</option>
-              <option className="bg-white text-black" value="1">Laundering</option>
-              <option className="bg-white text-black" value="0">Not Laundering</option>
+              <option className="bg-white text-black" value="1">Laundering Detected</option>
+              <option className="bg-white text-black" value="0">No Money Laundering</option>
             </select>
             <div className="pointer-events-none p-2 border rounded bg-transparent text-white flex items-center justify-between w-full h-full">
               <span>
@@ -128,11 +121,9 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
     );
   }
 
-
   if (!probability || probability.length < 2) {
     return <p className='text-3xl outline outline-slate-600 rounded-lg p-3 m-3 mt-5 w-101 min-h-screen'>No prediction available.</p>;
   }
-
 
   const data = {
     labels: ['Money laundering', 'Not money laundering'],
@@ -148,13 +139,11 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
     ]
   };
 
-
   const options = {
     plugins: {
       glow: { enabled: true },
     },
   };
-
 
   return (
     <div className='outline outline-slate-600 rounded-lg p-3 m-3 mt-5 w-101 min-h-screen'>

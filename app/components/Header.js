@@ -36,7 +36,7 @@ const Header = () => {
       }`}
     >
       <div className="flex items-center space-x-4">
-        <Link href={isSignedIn ? "/pages/Home2" : "/"}>
+        <Link href={isSignedIn ? "/" : "/"}>
           <Image
             src="/assets/logo2.png"
             alt="AML Logo"

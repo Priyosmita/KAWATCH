@@ -67,17 +67,17 @@ body {
 }
 
 .aboutPriyosImg {
-  width: 350px;
-  height: 350px;
-  margin-right: 110px;
-  margin-left: 100px;
+  width: 380px;
+  height: 380px;
+  margin-right: 270px;
+  /* margin-left: 100px; */
   /* margin-top: 20px; */
 }
 
 .aboutRijurajImg {
-  width: 420px;
-  height: 420px;
-  margin-right: 250px;
+  width: 450px;
+  height: 450px;
+  margin-right: 330px;
   margin-bottom: 50px;
 }
 
@@ -149,4 +149,8 @@ background: radial-gradient(circle, rgba(3,59,126,1) 0%, rgba(11,10,98,1) 48%, r
 
 .input-field::placeholder {
   color: gray; /* Adjust placeholder color as needed */
+}
+
+.MarginImg {
+  margin-right: 300px;
 }

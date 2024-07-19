@@ -1,19 +1,16 @@
-// being rendered as component without routing
 "use client";
 import React, { useState, useEffect } from 'react';
-// import TestimonialCarousel from '../components/TestimonialCarousel';
 import TestimonialCarousel from '@/app/components/TestimonialCarousel';
 import { SignIn, SignInButton, SignUpButton } from '@clerk/nextjs';
 import Link from 'next/link';
-// import Header from '../components/Header';
 import Header from '@/app/components/Header';
-// import Footer from '../components/Footer';
 import Footer from '@/app/components/Footer';
-import Dashboard from '../Dashboard';
+import Dashboard from '@/app/pages/Dashboard'; // Ensure the path to Dashboard is correct
 
 const LandingPage = () => {
   // State for logo tilt
   const [tiltStyle, setTiltStyle] = useState({});
+  const [showDashboard, setShowDashboard] = useState(false);
 
   // Handle mouse move for 3D tilt
   const handleMouseMove = (e) => {
@@ -27,6 +24,10 @@ const LandingPage = () => {
     setTiltStyle({
       transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
     });
+  };
+
+  const handleDashboardClick = () => {
+    setShowDashboard(true);
   };
 
   // Reset tilt on mouse leave
@@ -63,7 +64,7 @@ const LandingPage = () => {
       setShowPerks(true);
     } else {
       setShowPerks(false);
-    }
+    };
   };
   useEffect(() => {
     window.addEventListener('scroll', handleScrollPerk);
@@ -72,10 +73,14 @@ const LandingPage = () => {
     };
   }, []);
 
+  if (showDashboard) {
+    return <Dashboard />;
+  }
+
   return (
     <div className="backgroundGradient min-h-screen flex flex-col justify-between overflow-hidden">
       {/* Left side texts sign up buttons */}
-      <Header/>
+      <Header />
       <div className="flex flex-row justify-between mt-20">
         <div className="mt-36 ml-36 text-10xl cursor-default michroma-regular">
           KAWATCH
@@ -84,9 +89,12 @@ const LandingPage = () => {
             <p>Where Innovation meets Integrity</p>
           </div>
           <div className="flex flex-row justify-between mt-20">
-            <Link href='/'  legacyBehavior>
-              <a className="text-4xl rounded-full bg-black hover:bg-gray-500 px-20 pt-5 pb-5 transition duration-300 hover:scale-110">Back to Dashboard</a>
-            </Link>           
+            <button
+              onClick={handleDashboardClick}
+              className="text-4xl rounded-full bg-black hover:bg-gray-500 px-20 pt-5 pb-5 transition duration-300 hover:scale-110"
+            >
+              Dashboard
+            </button>
           </div>
         </div>
         {/* Right side logo */}
@@ -135,7 +143,7 @@ const LandingPage = () => {
             {perks.map((perk, index) => (
               <div key={index} className="ml-11 text-left flex items-center">
                 <li className="text-2xl text-white px-4 whitespace-nowrap transition duration-300 hover:scale-105 cursor-default">
-                    {perk.title}
+                  {perk.title}
                 </li>
               </div>
             ))}
@@ -144,8 +152,8 @@ const LandingPage = () => {
       </div>
       <div className='mx-24 mt-20 mb-40'>
         <TestimonialCarousel />
-      </div>     
-      <Footer/>
+      </div>
+      <Footer />
     </div>
   );
 };
