@@ -7,7 +7,7 @@ import Footer from '@/app/components/Footer'
 const Manual = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
-
+  // Modal open when we want to click on the picture to open it with a cross button 
 
   const openModal = (imageSrc) => {
     setCurrentImage(imageSrc);
@@ -21,6 +21,7 @@ const Manual = () => {
   };
 
 
+  // object for map function
   const manualSteps = [
     {
       imageSrc: "https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg",
@@ -41,8 +42,9 @@ const Manual = () => {
     <>
       <div className='backgroundGradient min-h-screen overflow-hidden'>
         <Header />
-        <div className='flex justify-center text-white text-7xl mt-32'>User Manual</div>
-        <div className='flex flex-col ml-16 mt-8'>
+        <div className='flex justify-center text-white text-7xl mt-32 cursor-default'>User Manual</div>
+        <div className='flex flex-col ml-8 mt-8 mb-20'>
+          {/* Dynamic repeater is used  */}
           {manualSteps.map((step, index) => (
             <div key={index} className='flex flex-row text-white gap-x-20 mt-10'>
               <div className=''>
@@ -53,7 +55,7 @@ const Manual = () => {
                   alt={`manual-step-${index + 1}`}
                 />
               </div>
-              <div className='mr-16'>
+              <div className='mr-20 cursor-default'>
                 {step.text}
               </div>
             </div>
