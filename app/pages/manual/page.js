@@ -1,44 +1,82 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
 
-const manual = () => {
+
+const Manual = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState('');
+
+
+  const openModal = (imageSrc) => {
+    setCurrentImage(imageSrc);
+    setIsModalOpen(true);
+  };
+
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentImage('');
+  };
+
+
+  const manualSteps = [
+    {
+      imageSrc: "https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg",
+      text: "skhdfhskdkvwjbvwjkebvakvbnk.anvvad.nv.adnv.van.alnvldnvl/addnmvl/amv/mvladnv.snv,sn,dsnd,bdd,vbb,v a,v av a.v a"
+    },
+    {
+      imageSrc: "https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg",
+      text: "skhdfhskdkvwjbvwjkebvakvbnk.anvvad.nv.adnv.van.alnvldnvl/addnmvl/amv/mvladnv.snv,sn,dsnd,bdd,vbb,v a,v av a.v a"
+    },
+    {
+      imageSrc: "https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg",
+      text: "skhdfhskdkvwjbvwjkebvakvbnk.anvvad.nv.adnv.van.alnvldnvl/addnmvl/amv/mvladnv.snv,sn,dsnd,bdd,vbb,v a,v av a.v a"
+    }
+  ];
+
+
   return (
     <>
       <div className='backgroundGradient min-h-screen overflow-hidden'>
         <Header />
         <div className='flex justify-center text-white text-7xl mt-32'>User Manual</div>
-        <div className='flex flex-col'>
-          <div className='flex flex-row text-white gap-x-20 justify-center'>
-            <div className=''>
-              <img src='https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'></img>
+        <div className='flex flex-col ml-16 mt-8'>
+          {manualSteps.map((step, index) => (
+            <div key={index} className='flex flex-row text-white gap-x-20 mt-10'>
+              <div className=''>
+                <img
+                  src={step.imageSrc}
+                  className='ml-16 cursor-pointer'
+                  onClick={() => openModal(step.imageSrc)}
+                  alt={`manual-step-${index + 1}`}
+                />
+              </div>
+              <div className='mr-16'>
+                {step.text}
+              </div>
             </div>
-            <div className=''>
-                skhdfhskd
-            </div>
-          </div>
-          <div className='flex flex-col bg-red-700'>
-            <div className=''>
-
-            </div>
-            <div className=''>
-
-            </div>
-          </div>
-          <div className='flex flex-col bg-red-700'>
-            <div className=''>
-
-            </div>
-            <div className=''>
-
-            </div>
-          </div>
+          ))}
         </div>
+        {isModalOpen && (
+          <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75'>
+            <div className='relative'>
+              <button
+                className='absolute top-4 right-4 text-white text-2xl'
+                onClick={closeModal}
+              >
+                &times;
+              </button>
+              <img src={currentImage} className='max-w-full max-h-full' alt='Modal content' />
+            </div>
+          </div>
+        )}
       </div>
       <Footer />
     </>
-  )
+  );
 }
 
-export default manual
+
+export default Manual;
