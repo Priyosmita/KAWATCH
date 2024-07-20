@@ -4,17 +4,22 @@ import '../globals.css';
 
 const testimonials = [
   {
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg',
+    image: '/assets/gingerbro.avif/',
     text: 'This is a great product! I highly recommend it.',
     name: 'John Doe',
   },
   {
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg',
+    image: '/assets/girl.avif/',
     text: 'Amazing experience, will definitely use again.',
     name: 'Jane Smith',
   },
   {
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg',
+    image: '/assets/indian.avif/',
+    text: 'Amazing experience, will definitely use again.',
+    name: 'Baba Yaga',
+  },
+  {
+    image: '/assets/blackman.jpg/',
     text: 'Amazing experience, will definitely use again.',
     name: 'Baba Yaga',
   },

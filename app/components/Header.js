@@ -66,7 +66,6 @@ const Header = ({ onDashboardClick }) => {
             About
           </a>
         </Link>
-        <SignOutButton className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]" />
         <div className="user-button-wrapper">
           <UserButton />
         </div>

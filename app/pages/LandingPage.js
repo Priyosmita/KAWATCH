@@ -71,7 +71,7 @@ const LandingPage = () => {
   return (
     <div className="backgroundGradient min-h-screen flex flex-col justify-between overflow-hidden">
       {/* Left side texts sign up buttons */}
-      <Header/>
+      <Header />
       <div className="flex flex-row justify-between mt-32 ml-5">
         <div className="mt-36 ml-36 text-9xl cursor-default">
           KAWATCH
@@ -80,10 +80,16 @@ const LandingPage = () => {
             <p>Where Innovation meets Integrity</p>
           </div>
           <div className="flex flex-row justify-between mt-20">
-            <Link href='/pages/authentication/signup'  legacyBehavior>
+            {/* <Link href='/pages/authentication/signup'  legacyBehavior>
               <a className="text-4xl rounded-full bg-black hover:bg-gray-500 p-5 transition duration-300 hover:scale-110">Sign Up</a>
-            </Link>
-            <Link href='/pages/authentication/signin'  legacyBehavior>
+            </Link> */}
+            <Link className='text-4xl rounded-full bg-blac hover:bg-gray-500 p-5 transition duration-300 hover:scale-110' href="/pages/authentication/signup">
+            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                SignUp
+              </span>
+            </button></Link>
+            <Link href='/pages/authentication/signin' legacyBehavior>
               <a className="text-4xl rounded-full bg-black hover:bg-gray-500 p-5 transition duration-300 hover:scale-110">Sign In</a>
             </Link>
           </div>
@@ -135,7 +141,7 @@ const LandingPage = () => {
             {perks.map((perk, index) => (
               <div key={index} className="ml-11 text-left flex items-center">
                 <li className="text-2xl text-white px-4 whitespace-nowrap transition duration-300 hover:scale-105 cursor-default">
-                    {perk.title}
+                  {perk.title}
                 </li>
               </div>
             ))}
@@ -144,8 +150,8 @@ const LandingPage = () => {
       </div>
       <div className='mx-24 mt-20 mb-40'>
         <TestimonialCarousel />
-      </div>     
-      <Footer/>
+      </div>
+      <Footer />
     </div>
   );
 };
