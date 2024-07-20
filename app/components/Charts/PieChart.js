@@ -16,9 +16,23 @@ const PieChart = ({ data, options }) => {
     })),
   };
 
+  const updatedOptions = {
+    ...options,
+    plugins: {
+      ...options?.plugins,
+      legend: {
+        ...options?.plugins?.legend,
+        labels: {
+          ...options?.plugins?.legend?.labels,
+          color: '#ACABAD', // Change legend label text color to white
+        },
+      },
+    },
+  };
+
   return (
     <div className="pie-chart-container" style={{ position: 'relative', height: '400px', width: '400px' }}>
-      <Pie data={updatedData} options={options} />
+      <Pie data={updatedData} options={updatedOptions} />
     </div>
   );
 };
