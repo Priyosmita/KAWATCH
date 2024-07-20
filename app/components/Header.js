@@ -6,10 +6,11 @@ import '../globals.css';
 import { SignOutButton, UserButton } from '@clerk/nextjs';
 import { useAuth } from '@clerk/nextjs';
 
-const Header = () => {
+const Header = ({ onDashboardClick }) => {
   const { isLoaded, userId } = useAuth();
   const [scrollY, setScrollY] = useState(0);
   const [hidden, setHidden] = useState(false);
+
   const isSignedIn = isLoaded && !!userId;
 
   useEffect(() => {
@@ -49,6 +50,12 @@ const Header = () => {
         </span>
       </div>
       <nav className="flex space-x-6 items-center gap-x-9">
+        <button
+          onClick={onDashboardClick}
+          className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]"
+        >
+          Dashboard
+        </button>
         <Link href="/pages/manual" legacyBehavior>
           <a className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]">
             User Manual

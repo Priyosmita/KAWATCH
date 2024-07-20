@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image';
 import '../globals.css';
+import Link from 'next/link';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -14,6 +15,7 @@ const Footer = () => {
   return (
     <footer className="bg-black flex justify-between items-center footerHeight">
       <div className="flex flex-row items-center space-x-4">
+        <Link href="/">
         <Image
           src="/assets/logo_without_bg.png"
           alt="AML Logo"
@@ -22,7 +24,7 @@ const Footer = () => {
           className='transition duration-300 hover:scale-110 cursor-pointer'
           onClick={scrollToTop}
           style={{ cursor: 'pointer' }} // Add cursor pointer for better UX
-        />
+        /></Link>
       </div>  { /* Contact column */}
       <div className="flex flex-col mt-16 space-y-4 text-2xl">
         <div className='flex flex-col gap-y-11'>

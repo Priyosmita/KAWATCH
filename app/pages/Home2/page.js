@@ -79,8 +79,7 @@ const LandingPage = () => {
 
   return (
     <div className="backgroundGradient min-h-screen flex flex-col justify-between overflow-hidden">
-      {/* Left side texts sign up buttons */}
-      <Header />
+      <Header onDashboardClick={handleDashboardClick} />
       <div className="flex flex-row justify-between mt-20">
         <div className="mt-36 ml-36 text-10xl cursor-default michroma-regular">
           KAWATCH
@@ -97,7 +96,6 @@ const LandingPage = () => {
             </button>
           </div>
         </div>
-        {/* Right side logo */}
         <div
           className="mt-36 mr-36"
           onMouseMove={handleMouseMove}
@@ -114,7 +112,6 @@ const LandingPage = () => {
         </div>
       </div>
 
-      {/* Feature grid */}
       <div className={`overflow-hidden flex flex-col mt-20 transition-transform duration-700 ${showFeatures ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="text-8xl mr-32 text-right cursor-default">
           Features
@@ -122,7 +119,7 @@ const LandingPage = () => {
         <div className="grid grid-cols-4 gap-5 gap-y-11 mt-9 p-6">
           {features.map((feature, index) => (
             <div key={index} className="relative group text-center">
-              <img src={feature.image} alt={feature.title} className="h-56 w-56 mx-auto rounded-full transform transition duration-300 ease-in-out group-hover:scale-110" />
+              <img src={feature.image} alt={feature.title} className="h-56 w-56 mx-auto rounded-full transform transition duration-300 ease-in-out group-hover:scale-110 group-hover:bg-black group-hover:opacity-30" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
                 <h3 className="text-3xl text-white whitespace-normal break-words w-56 px-4 cursor-default">
                   {feature.title}
@@ -133,7 +130,6 @@ const LandingPage = () => {
         </div>
       </div>
 
-      {/* Perks grid */}
       <div className={`flex flex-col mt-20 transition-transform duration-700 ${showPerks ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="text-8xl ml-32 text-left cursor-default">
           Perks
@@ -161,35 +157,35 @@ const LandingPage = () => {
 const features = [
   {
     title: 'Advanced AML Detection',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/aml.jpg/'
   },
   {
     title: 'Real-Time Analysis',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/analysis.jpg/'
   },
   {
     title: 'Seamless Integration',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/integration.jpg/'
   },
   {
     title: 'Automated Monitoring',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/auto.jpeg/'
   },
   {
     title: 'Blockchain-Based Logging',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/etheriumb.jpg/'
   },
   {
     title: 'Intuitive Interface',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/ui2.jpg/'
   },
   {
     title: 'Robust Alert Mechanisms',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/alert.jpg/'
   },
   {
     title: 'Dual Mode Laundering Detection',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/dual.png/'
   }
 ];
 

@@ -4,21 +4,32 @@ import LineChart from './Charts/LineChart.js';
 import ScatterChart from './Charts/ScatterChart.js';
 import BarChart from './Charts/BarChart.js';
 import '../globals.css';
+import web3 from '../utils/web3';
+import transactionStorage from '../utils/transactionStorage';
 
 const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
   const [filter, setFilter] = useState('all');
   const [filteredResults, setFilteredResults] = useState([]);
 
   useEffect(() => {
-    // Initialize with all results
-    setFilteredResults(bulkResults || []);
+    // Initialize with all results and add sequential record IDs
+    const resultsWithIds = bulkResults.map((result, index) => ({
+      ...result,
+      recordId: index + 1,
+    }));
+    setFilteredResults(resultsWithIds);
   }, [bulkResults]);
 
   const handleFilterChange = (event) => {
     const selectedFilter = event.target.value;
     setFilter(selectedFilter);
 
-    const filteredData = bulkResults.filter((result) => {
+    const resultsWithIds = bulkResults.map((result, index) => ({
+      ...result,
+      recordId: index + 1,
+    }));
+
+    const filteredData = resultsWithIds.filter((result) => {
       if (selectedFilter === 'all') return true;
       return result.prediction === parseInt(selectedFilter);
     });
@@ -26,24 +37,41 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
     setFilteredResults(filteredData);
   };
 
+  const uploadToBlockchain = async (result) => {
+    const accounts = await web3.eth.getAccounts();
+    await transactionStorage.methods.storeTransaction(
+      result.prediction === 0 ? "No Money Laundering" : "Laundering Detected",
+      result.probability && result.probability.length > 1 ? result.probability[1].toFixed(3) : 'N/A',
+      result.probability && result.probability.length > 0 ? result.probability[0].toFixed(3) : 'N/A'
+    ).send({ from: accounts[0] });
+  };
+
   const BulkTable = () => (
-    <div className='mt-8 max-h-80 overflow-y-auto w-full outline'>
+    <div className='mt-8 tableHeight overflow-y-auto w-full outline '>
       <table className='w-full text-center'>
         <thead className='sticky top-0'>
           <tr>
-            <th className='p-2 border-b'>Record</th>
+            <th className='p-2 border-b'>Record ID</th> {/* Updated header */}
             <th className='p-2 border-b'>Prediction</th>
             <th className='p-2 border-b'>Negative Probability</th>
             <th className='p-2 border-b'>Positive Probability</th>
+            <th className='p-2 border-b'>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {filteredResults.map((result, index) => (
-            <tr key={index}>
-              <td className='text-center p-2 border-b-2'>{index + 1}</td>
+          {filteredResults.map((result) => (
+            <tr key={result.recordId}> {/* Updated key */}
+              <td className='text-center p-2 border-b-2'>{result.recordId}</td> {/* Display sequential ID */}
               <td className='text-center p-2 border-b-2'>{result.prediction === 0 ? "No Money Laundering" : "Laundering Detected"}</td>
               <td className='text-center p-2 border-b-2'>{result.probability && result.probability.length > 1 ? result.probability[1].toFixed(3) : 'N/A'}</td>
               <td className='text-center p-2 border-b-2'>{result.probability && result.probability.length > 0 ? result.probability[0].toFixed(3) : 'N/A'}</td>
+              <td className='text-center p-2 border-b-2'>
+                {/* <button onClick={() => uploadToBlockchain(result)} className='px-4 py-2 bg-blue-500 rounded-full text-white hover:bg-[#94d5f8] hover:text-black '>Upload to Blockchain</button> */}
+                <button onClick={() => uploadToBlockchain(result)}  type="button" class="mt- text-gray-900 bg-gray-100 hover:bg-gray-200 hover:scale-110 transition duration-150 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 me-2 mb-2">
+                  <svg class="w-4 h-4 me-2 -ms-1 text-[#626890]" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="ethereum" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z"></path></svg>
+                  Upload to Blockchain
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -153,7 +181,7 @@ const AnalyticsBar = ({ prediction, probability, bulkResults }) => {
           <p className='text-3xl mb-3'>Money laundering: {probability[1].toFixed(3)}</p>
           <p className='text-3xl mb-3'>Not money laundering: {probability[0].toFixed(3)}</p>
           <div className='flex justify-center'>
-            <PieChart data={data} options={options}/>
+            <PieChart data={data} options={options} />
           </div>
         </div>
       ) : (

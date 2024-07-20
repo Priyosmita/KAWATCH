@@ -24,19 +24,39 @@ const Manual = () => {
         <Header />
         <div className='flex justify-center text-white text-7xl mt-32'>User Manual</div>
         <div className='flex justify-center'>
-          <div className='flex flex-col ml-8 mt-12 outline outline-slate-600 rounded-lg customWidth mr-8'>
+          
+          <div className='flex flex-col ml-8 mt-12 outline outline-slate-600 rounded-lg customWidth mr-8 mb-10'>
+            {/* kjdbvKJBV */}
             <div className='flex flex-row text-white gap-x-20 mt-10'>
               <div className='flex-shrink-0'>
                 <img
-                  src='/assets/excel.jpeg'
+                  src='/assets/dualmode.png'
                   className='ml-10 cursor-pointer imgSize'
-                  onClick={() => openModal('/assets/excel.jpeg')}
+                  onClick={() => openModal('/assets/dualmode.png')}
                   alt='Column guide'
                 />
               </div>
               <div className='mr-20 flex flex-col justify-center'>
-                <h2 className='text-3xl'>CSV preparation for Bulk-Prediction</h2>
-                <h2 className='font-bold'>
+                <h2 className='text-3xl font-bold'>Dual-mode prediction</h2>
+                <h2 className='mt-5'>
+                The dual-mode prediction feature enables the prediction of money laundering activities for either a single transaction or multiple transactions uploaded via a .csv file. Users can switch between these modes using the drop-down menu.
+                </h2>
+                
+              </div>
+            </div>
+            <hr className='mt-8'></hr>
+            <div className='flex flex-row text-white gap-x-20 mt-10'>
+              <div className='flex-shrink-0'>
+                <img
+                  src='/assets/excel.png'
+                  className='ml-10 cursor-pointer imgSize'
+                  onClick={() => openModal('/assets/excel.png')}
+                  alt='Column guide'
+                />
+              </div>
+              <div className='mr-20 flex flex-col justify-center'>
+                <h2 className='text-3xl font-bold'>CSV preparation for Bulk-Prediction</h2>
+                <h2 className=''>
                   For precise and accurate predictions of money laundering activities, it is essential that your CSV file includes the following columns with the exact specified column names, in addition to any other required columns:
                 </h2>
                 <ul className='list-disc list-inside text-white'>
@@ -49,32 +69,100 @@ const Manual = () => {
                 </ul>
               </div>
             </div>
+            <hr className='mt-8'></hr>
             <div className='flex flex-row text-white gap-x-20 mt-10'>
               <div className='flex-shrink-0'>
                 <img
-                  src='https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
-                  className='ml-16 cursor-pointer'
-                  onClick={() => openModal('https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg')}
-                  alt='Step 1'
+                  src='/assets/blockchain.png'
+                  className='ml-10 cursor-pointer imgSize'
+                  onClick={() => openModal('/assets/blockchain.png')}
+                  alt='Column guide'
                 />
               </div>
-              <div className='mr-16 font-bold'>
-                skhdfhskdkvwjbvwjkebvakvbnk.anvvad.nv.adnv.van.alnvldnvl/addnmvl/amv/mvladnv.snv,sn,dsnd,bdd,vbb,v a,v av a.v a
+              <div className='mr-20 flex flex-col justify-center'>
+                <h2 className='text-3xl font-bold'> Data uploading on Blockchain</h2>
+                <h2 className='mt-5'>
+                After completing the standard login process, data can be uploaded to etherium blockchain via smart contract. Please note that a gas fee will be required to comply with blockchain protocols.
+                </h2>
+                
               </div>
             </div>
+            <hr className='mt-8'></hr>
             <div className='flex flex-row text-white gap-x-20 mt-10'>
               <div className='flex-shrink-0'>
                 <img
-                  src='https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
-                  className='ml-16 cursor-pointer'
-                  onClick={() => openModal('https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg')}
-                  alt='Step 2'
+                  src='/assets/piechart.png'
+                  className='ml-10 cursor-pointer imgSize'
+                  onClick={() => openModal('/assets/piechart.png')}
+                  alt='Column guide'
                 />
               </div>
-              <div className='mr-16 font-bold'>
-                skhdfhskdkvwjbvwjkebvakvbnk.anvvad.nv.adnv.van.alnvldnvl/addnmvl/amv/mvladnv.snv,sn,dsnd,bdd,vbb,v a,v av a.v a
+              <div className='mr-20 flex flex-col justify-center'>
+                <h2 className='text-3xl font-bold'>Pie Chart: Money Laundering vs. No Money Laundering</h2>
+                <h2 className='mt-5'>
+                The Pie Chart visually represents the ratio of transactions flagged for money laundering versus those not flagged. This helps users quickly gauge the proportion of suspicious transactions in their data for both modes.
+                </h2>
+                
               </div>
             </div>
+            <hr className='mt-8'></hr>
+            <div className='flex flex-row text-white gap-x-20 mt-10'>
+              <div className='flex-shrink-0'>
+                <img
+                  src='/assets/linechart.png'
+                  className='ml-10 cursor-pointer imgSize'
+                  onClick={() => openModal('/assets/linechart.png')}
+                  alt='Column guide'
+                />
+              </div>
+              <div className='mr-20 flex flex-col justify-center'>
+                <h2 className='text-3xl font-bold'>Line Chart: Probability vs. Record ID</h2>
+                <h2 className='mt-5'>
+                The Line Chart plots the probability of money laundering against the record ID for each transaction. Users can filter the lines by clicking on the legend to view specific data, and hovering over points on the chart will display detailed information about each transaction
+                </h2>
+                
+              </div>
+            </div>           
+            <hr className='mt-8'></hr>
+            <div className='flex flex-row text-white gap-x-20 mt-10'>
+              <div className='flex-shrink-0'>
+                <img
+                  src='/assets/scatterchart.png'
+                  className='ml-10 cursor-pointer imgSize'
+                  onClick={() => openModal('/assets/scatterchart.png')}
+                  alt='Column guide'
+                />
+              </div>
+              <div className='mr-20 flex flex-col justify-center'>
+                <h2 className='text-3xl font-bold'>Scatter Chart: Positive Probability vs. Negative Probability</h2>
+                <h2 className='mt-5'>
+                The Scatter Chart plots positive probability against negative probability for each transaction. Users can filter the chart data by clicking on the legend to view specific data subsets. Additionally, hovering over points on the chart will display detailed information about each point.
+                </h2>
+                
+              </div>
+            </div>
+            <hr className='mt-8'></hr>
+            <div className='flex flex-row text-white gap-x-20 mt-10'>
+              <div className='flex-shrink-0'>
+                <img
+                  src='/assets/barchart.png'
+                  className='ml-10 cursor-pointer imgSize'
+                  onClick={() => openModal('/assets/barchart.png')}
+                  alt='Column guide'
+                />
+              </div>
+              <div className='mr-20 flex flex-col justify-center'>
+                <h2 className='text-3xl font-bold'> Bar Chart: Probability vs. Record ID</h2>
+                <h2 className='mt-5'>
+                The Bar Chart plots the probability of money laundering against the record ID for each transaction. Users can filter the chart data by clicking on the legend to view specific bars. Additionally, hovering over bars on the chart will display detailed information about each transaction.
+                </h2>
+                
+              </div>
+            </div>
+            
+            
+            
+            
           </div>
         </div>
         {isModalOpen && (

@@ -13,20 +13,20 @@ const LineChart = ({ bulkResults }) => {
     labels,
     datasets: [
       {
-        label: 'Money Laundering',
+        label: 'Not Money Laundering',
         data: negativeData,
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+        borderColor: 'rgba(54, 162, 235, 1)',
         borderWidth: 1,
         // borderColor: '#FF6384',
         // fill: false,
         tension: 0.1,
       },
       {
-        label: 'Not Money Laundering',
+        label: 'Money Laundering',
         data: positiveData,
-        backgroundColor: 'rgba(54, 162, 235, 0.5)',
-        borderColor: 'rgba(54, 162, 235, 1)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgba(255, 99, 132, 1)',
         borderWidth: 1,
         // borderColor: '#36A2EB',
         // fill: false,
@@ -37,6 +37,7 @@ const LineChart = ({ bulkResults }) => {
 
 
   const options = {
+    animation: 5000,
     responsive: true,
     maintainAspectRatio: false,
     scales: {
