@@ -22,8 +22,8 @@ const About = () => {
           <>
             <div className="flex flex-col md:flex-row items-center justify-center w-full px-10 gap-x-64 mt-64">
               <div className="flex flex-col items-center justify-center ml-10">
-                <div className="text-8xl text-center md:text-left">ABOUT</div>
-                <div className="text-9xl mt-11 text-center md:text-left">KAWATCH</div>
+                <div className="text-8xl text-center md:text-left cursor-default">ABOUT</div>
+                <div className="text-9xl mt-11 text-center md:text-left cursor-default">KAWATCH</div>
               </div>
               <div className="flex flex-col items-center md:items-end mt-20 md:mt-0">
                 <div className='flex flex-row justify-center'>
@@ -42,8 +42,8 @@ const About = () => {
 
             {/* Bullet points section */}
             <div className="outline outline-slate-500 rounded-lg ml-8 mr-1 w-102 text-lg flex flex-col items-center justify-center mt-36 text-white text-center md:text-left px-10 mb-16">
-              <p className="text-4xl mb-6 mt-9">What We Offer</p>
-              <ul className="text-xl list-disc list-inside mb-9">
+              <p className="text-4xl mb-6 mt-9 cursor-default">What We Offer</p>
+              <ul className="text-xl list-disc list-inside mb-9 cursor-default">
                 <li>Real-Time Transaction Monitoring: Engage in 24/7 surveillance of transactions to spot suspicious activities instantly. Benefit: Swift detection and rapid response to potential money laundering, slashing the risk of financial crimes going unnoticed.</li>
                 <li>Automated Alert Generation: Automatically flag transactions that meet suspicious criteria using cutting-edge machine learning. Benefit: Reduces the manual burden on compliance teams, ensuring quick investigations and boosting efficiency.</li>
                 <li>Data Integration and Enrichment: Effortlessly integrate with a variety of data sources, from internal databases to external watchlists and sanction lists. Benefit: Offers a comprehensive view of transaction data, significantly improving detection accuracy and reliability.</li>

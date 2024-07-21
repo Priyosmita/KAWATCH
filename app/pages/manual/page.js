@@ -32,8 +32,8 @@ const Manual = () => {
           <Dashboard /> // Render the Dashboard component if showDashboard is true
         ) : (
           <>
-            <div className='flex justify-center text-white text-7xl mt-32'>User Manual</div>
-            <div className='flex justify-center'>
+            <div className='flex justify-center text-white text-7xl mt-32 cursor-default'>User Manual</div>
+            <div className='flex justify-center cursor-default'>
               <div className='flex flex-col ml-8 mt-12 outline outline-slate-600 rounded-lg customWidth mr-8 mb-10'>
                 {/* Content */}
                 <div className='flex flex-row text-white gap-x-20 mt-10'>
@@ -64,7 +64,7 @@ const Manual = () => {
                   </div>
                   <div className='mr-20 flex flex-col justify-center'>
                     <h2 className='text-3xl font-bold'>CSV preparation for Bulk-Prediction</h2>
-                    <h2>
+                    <h2 className='mt-5'>
                       For precise and accurate predictions of money laundering activities, it is essential that your CSV file includes the following columns with the exact specified column names, in addition to any other required columns:
                     </h2>
                     <ul className='list-disc list-inside text-white'>
@@ -128,6 +128,24 @@ const Manual = () => {
                     </h2>
                   </div>
                 </div>
+                <hr className='mt-8'></hr>
+                <div className='flex flex-row text-white gap-x-20 mt-10'>
+                  <div className='flex-shrink-0'>
+                    <img src='/assets/barchart.png' className='ml-10 cursor-pointer imgSize' onClick={() => openModal('/assets/barchart.png')} alt='Column guide' />
+                  </div>
+                  <div className='mr-20 flex flex-col justify-center'>
+                    <h2 className='text-3xl font-bold'> Bar Chart: Probability vs. Record ID</h2>
+                    <h2 className='mt-5'> The Bar Chart plots the probability of money laundering against the record ID for each transaction. Users can filter the chart data by clicking on the legend to view specific bars. Additionally, hovering over bars on the chart will display detailed information about each transaction. </h2>
+                  </div>
+                </div>
+                <hr className='mt-8'></hr>
+                <div className='flex flex-row text-white gap-x-20 mt-10'>
+                  <div className='flex-shrink-0'>
+                    <img src='/assets/scatterchart.png' className='ml-10 cursor-pointer imgSize' onClick={() => openModal('/assets/scatterchart.png')} alt='Column guide' />
+                  </div> <div className='mr-20 flex flex-col justify-center'>
+                    <h2 className='text-3xl font-bold'>Scatter Chart: Positive Probability vs. Negative Probability</h2> <h2 className='mt-5'> The Scatter Chart plots positive probability against negative probability for each transaction. Users can filter the chart data by clicking on the legend to view specific data subsets. Additionally, hovering over points on the chart will display detailed information about each point. </h2>
+                  </div>
+                </div>
               </div>
             </div>
           </>
@@ -139,8 +157,3 @@ const Manual = () => {
 };
 
 export default Manual;
-
-
-
-
-
