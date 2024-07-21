@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && copyfiles -u 2 blockchain/artifacts/contracts/TransactionStorage.sol/TransactionStorage.json ./public",
+    "build": "next build && copyfiles -u 2 ../../../blockchain/artifacts/contracts/TransactionStorage.sol/TransactionStorage.json ./public",
     "start": "next start",
     "lint": "next lint"
   },
