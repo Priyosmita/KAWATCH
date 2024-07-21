@@ -8,7 +8,7 @@ const page = () => {
   return (
     <>
     <Header></Header>
-    <div className='className="bg-gradient-to-r from-gray-400 to-indigo-600 bg-gradient-to-bl from-slate-900 via-blue-900 to-slate-900 flex flex-row justify-center items-center min-h-screen '><SignIn/></div>
+    <div className='backgroundGradient flex flex-row justify-center items-center min-h-screen '><SignIn/></div>
     <Footer></Footer>
     </>
     

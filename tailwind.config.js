@@ -20,6 +20,7 @@ module.exports = {
             width: {
               '100': '500px',
               '101': '1390px',
+              '102': '1625px'
             },
 
             scale: {

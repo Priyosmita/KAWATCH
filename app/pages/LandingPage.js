@@ -110,8 +110,8 @@ const LandingPage = () => {
           style={tiltStyle}
         >
           <img
-            src="/assets/logo real.png"
-            alt="Logo real"
+            src="/assets/realisticlogo.png"
+            alt="KAWATCH logo"
             width={550}
             height={550}
             className="transition-transform duration-300"

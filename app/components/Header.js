@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -32,8 +32,7 @@ const Header = ({ onDashboardClick }) => {
 
   return (
     <header
-      className={`bg-black w-full py-2 px-8 flex justify-between items-center z-10 fixed transition-transform duration-300 ${hidden ? '-translate-y-full' : 'translate-y-0'
-        }`}
+      className={`bg-black w-full py-2 px-8 flex justify-between items-center z-10 fixed transition-transform duration-300 ${hidden ? '-translate-y-full' : 'translate-y-0'}`}
     >
       <div className="flex items-center space-x-4">
         <Link href={isSignedIn ? "/" : "/"}>
