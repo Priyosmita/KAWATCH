@@ -5,7 +5,8 @@ import { SignIn, SignInButton, SignUpButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
-import Dashboard from '@/app/pages/Dashboard'; // Ensure the path to Dashboard is correct
+import Dashboard from '@/app/pages/Dashboard'; 
+import "../../globals.css"
 
 const LandingPage = () => {
   // State for logo tilt
@@ -90,9 +91,11 @@ const LandingPage = () => {
           <div className="flex flex-row justify-between mt-20">
             <button
               onClick={handleDashboardClick}
-              className="text-4xl rounded-full bg-black hover:bg-gray-500 px-20 pt-5 pb-5 transition duration-300 hover:scale-110"
+              className="ml-16 h-11  mt-8 relative inline-flex items-center justify-center p-0.5 mb-16 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scaleButton"
             >
-              Dashboard
+              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                <a>Dashboard</a>
+              </span>
             </button>
           </div>
         </div>

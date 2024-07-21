@@ -6,6 +6,7 @@ import { SignIn, SignInButton, SignUpButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import "../globals.css"
 
 const LandingPage = () => {
   // State for logo tilt
@@ -84,15 +85,20 @@ const LandingPage = () => {
               <a className="text-4xl rounded-full bg-black hover:bg-gray-500 p-5 transition duration-300 hover:scale-110">Sign Up</a>
             </Link> */}
             {/* <Link className='text-4xl rounded-full bg-blac  p-5 transition duration-300 hover:scale-110' href="/pages/authentication/signup"> */}
-            <button class="h-11 scale-150 mt-8 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+            <button class="ml-6 h-11 scaleButton mt-8 relative inline-flex items-center justify-center p-0.5 mb-10 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
               <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                 <a href='/pages/authentication/signup'>SignUp</a>
               </span>
             </button>
+            <button class="scaleButton mr-8 h-11  mt-8 relative inline-flex items-center justify-center p-0.5 mb-10 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                <a href='/pages/authentication/signin'>SignIn</a>
+              </span>
+            </button>
             
-            <Link href='/pages/authentication/signin' legacyBehavior>
+            {/* <Link href='/pages/authentication/signin' legacyBehavior>
               <a className="text-4xl rounded-full bg-black hover:bg-gray-500 p-5 transition duration-300 hover:scale-110">Sign In</a>
-            </Link>
+            </Link> */}
           </div>
         </div>
 
@@ -121,7 +127,7 @@ const LandingPage = () => {
         <div className="grid grid-cols-4 gap-5 gap-y-11 mt-9 p-6">
           {features.map((feature, index) => (
             <div key={index} className="relative group text-center">
-              <img src={feature.image} alt={feature.title} className="h-56 w-56 mx-auto rounded-full transform transition duration-300 ease-in-out group-hover:scale-110" />
+              <img src={feature.image} alt={feature.title} className="h-56 w-56 mx-auto rounded-full transform transition duration-300 ease-in-out group-hover:scale-110 group-hover:bg-black group-hover:opacity-30" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
                 <h3 className="text-3xl text-white whitespace-normal break-words w-56 px-4 cursor-default">
                   {feature.title}
@@ -160,38 +166,37 @@ const LandingPage = () => {
 const features = [
   {
     title: 'Advanced AML Detection',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/aml.jpg/'
   },
   {
     title: 'Real-Time Analysis',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/analysis.jpg/'
   },
   {
     title: 'Seamless Integration',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/integration.jpg/'
   },
   {
     title: 'Automated Monitoring',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/auto.jpeg/'
   },
   {
     title: 'Blockchain-Based Logging',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/etheriumb.jpg/'
   },
   {
     title: 'Intuitive Interface',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/ui2.jpg/'
   },
   {
     title: 'Robust Alert Mechanisms',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/alert.jpg/'
   },
   {
     title: 'Dual Mode Laundering Detection',
-    image: 'https://ibighit.com/bts/images/profile/proof/member/bts-m.jpg'
+    image: '/assets/dual.png/'
   }
 ];
-
 const perks = [
   {
     title: 'Immediate Threat Mitigation',

@@ -8,7 +8,7 @@ const ParentComponent = () => {
   const [bulkResults, setBulkResults] = useState([]);
 
   return (
-    <div className='flex flex-row justify-between'>
+    <div className='flex flex-row justify-between overflow-hidden'>
       <TransactionBar
         setPrediction={setPrediction}
         setProbability={setProbability}
