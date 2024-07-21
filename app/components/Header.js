@@ -45,24 +45,24 @@ const Header = ({ onDashboardClick }) => {
             className="cursor-pointer transform duration-300 hover:scale-110"
           />
         </Link>
-        <span className="cursor-default text-xl font-semibold text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]">
+        <span className="cursor-default text-xl font-semibold text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#7da0ff]">
           Kawatch
         </span>
       </div>
       <nav className="flex space-x-6 items-center gap-x-9">
         <button
           onClick={onDashboardClick}
-          className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]"
+          className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#7da0ff]"
         >
           Dashboard
         </button>
         <Link href="/pages/manual" legacyBehavior>
-          <a className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]">
+          <a className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#7da0ff]">
             User Manual
           </a>
         </Link>
         <Link href="/pages/about" legacyBehavior>
-          <a className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#283456]">
+          <a className="text-xl text-[#f5f7f8] transform duration-300 hover:scale-110 hover:text-[#7da0ff]">
             About
           </a>
         </Link>

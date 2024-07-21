@@ -85,14 +85,14 @@ const LandingPage = () => {
               <a className="text-4xl rounded-full bg-black hover:bg-gray-500 p-5 transition duration-300 hover:scale-110">Sign Up</a>
             </Link> */}
             {/* <Link className='text-4xl rounded-full bg-blac  p-5 transition duration-300 hover:scale-110' href="/pages/authentication/signup"> */}
-            <button class="ml-6 h-11 scaleButton mt-8 relative inline-flex items-center justify-center p-0.5 mb-10 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+            <button class="ml-6 h-11 scaleButton mt-8 relative inline-flex items-center justify-center p-0.5 mb-10 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transition duration-300 hover:scale-151">
               <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                <a href='/pages/authentication/signup'>SignUp</a>
+                <a href='/pages/authentication/signup'>Sign Up</a>
               </span>
             </button>
-            <button class="scaleButton mr-8 h-11  mt-8 relative inline-flex items-center justify-center p-0.5 mb-10 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+            <button class="scaleButton mr-8 h-11  mt-8 relative inline-flex items-center justify-center p-0.5 mb-10 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transition duration-300 hover:scale-151">
               <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                <a href='/pages/authentication/signin'>SignIn</a>
+                <a href='/pages/authentication/signin'>Sign In</a>
               </span>
             </button>
             
