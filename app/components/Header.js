@@ -35,7 +35,7 @@ const Header = ({ onDashboardClick }) => {
       className={`bg-black w-full py-2 px-8 flex justify-between items-center z-10 fixed transition-transform duration-300 ${hidden ? '-translate-y-full' : 'translate-y-0'}`}
     >
       <div className="flex items-center space-x-4">
-        <Link href={isSignedIn ? "/" : "/"}>
+        <Link href="/">
           <Image
             src="/assets/logo2.png"
             alt="AML Logo"
