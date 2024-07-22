@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  font-family: 'Exo', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  font-family: 'Exo', sans-serif;
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.rotate270 {
+  transform: rotate(270deg);
+}
+
+.opacity100 {
+  opacity: 100 !important;
+}
+
+@keyframes tilt {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+.hover\:tilt:hover {
+  transform: rotate(10deg);
+}
+
+.footerHeight {
+  height: 575px;
+}
+
+.cardAdjust {
+  margin-top: 50px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.marginForAbout {
+  margin-right: 1rem; /* Adjust this value to reduce the gap */
+}
+
+.aboutPriyosImg {
+  width: 380px;
+  height: 380px;
+  margin-right: 270px;
+  /* margin-left: 100px; */
+  /* margin-top: 20px; */
+}
+
+.aboutRijurajImg {
+  width: 450px;
+  height: 450px;
+  margin-right: 330px;
+  margin-bottom: 50px;
+}
+
+.flex1 {
+  gap: 200px; /* Adjust this value to control the gap between elements */
+}
+
+.gapx {
+  gap: 80px;
+}
+
+.relative .hover-text {
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.relative:hover .hover-text {
+  opacity: 1;
+}
+.rijumarginLeft {
+  margin-left: 75px;
+}
+
+/* for transaction bar */
+input {
+  background-color: rgba(255, 255, 255, 1) !important; /* Full opacity */
+}
+
+
+/* bg gradient */
+.backgroundGradient {
+  background: rgb(3,59,126);
+background: radial-gradient(circle, rgba(3,59,126,1) 0%, rgba(11,10,98,1) 48%, rgba(2,1,20,1) 100%);
+}
+
+.pie-chart-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.transparent-input {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+.input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 2.5rem; /* Adjust height as needed */
+  border: 1px solid white;
+  border-radius: 0.25rem; /* Adjust border-radius as needed */
+}
+
+.input-field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem; /* Adjust padding as needed */
+  background-color: transparent;
+  color: black;
+  border: none;
+  box-sizing: border-box; /* Ensures padding does not affect width/height */
+}
+
+.input-field::placeholder {
+  color: gray; /* Adjust placeholder color as needed */
+}
+
+.MarginImg {
+  margin-right: 300px;
+}
+
+.user-button-wrapper {
+  display: inline-block;
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+}
+
+.user-button-wrapper:hover {
+  transform: scale(1.8);
+}
+.tableHeight{
+  max-height: 400px;
+}
+
+.scaleButton {
+  --tw-scale-x: 2;
+  --tw-scale-y: 2;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hoverScale {
+  --tw-scale-x: 2.5;
+  --tw-scale-y: 2.5;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
