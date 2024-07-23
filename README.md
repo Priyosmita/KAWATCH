@@ -31,6 +31,8 @@ KAWATCH is transforming the landscape of financial security with its cutting-edg
 - **Continuous Learning and Improvement**: Incorporate feedback from compliance investigations to continuously enhance the accuracy and effectiveness of detection algorithms.
 - **Training and Support**: Provide training resources and support for users to maximize the effectiveness of the platform and ensure compliance with regulatory standards.
 
+
+
 ## Perks
 - **Tailored Monitoring Solutions**: Customize transaction monitoring to fit specific business needs and regulatory requirements, ensuring precise and effective surveillance.
 - **Real-Time Detection**: Benefit from monitoring of financial transactions, enabling swift detection and response to suspicious activities, reducing the risk of financial crimes.
