@@ -30,6 +30,10 @@ KAWATCH is transforming the landscape of financial security with its cutting-edg
 - **Integration with Existing Systems**: Seamlessly integrate KAWATCH with existing banking and financial systems using RESTful APIs for smooth operation.
 - **Continuous Learning and Improvement**: Incorporate feedback from compliance investigations to continuously enhance the accuracy and effectiveness of detection algorithms.
 - **Training and Support**: Provide training resources and support for users to maximize the effectiveness of the platform and ensure compliance with regulatory standards.
+  
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d6c805d8-968c-414f-9642-2c83e5abb050" alt="Kawatch-landing">
+</div>
 
 
 
@@ -47,6 +51,10 @@ KAWATCH is transforming the landscape of financial security with its cutting-edg
 - **Career Advancement**: Leverage the platform's capabilities to enhance your organization's compliance efforts, advancing your professional standing in the industry.
 - **Empowerment**: Empower your compliance team with cutting-edge tools and technologies, enabling them to effectively combat money laundering and other financial crimes.
 - **Dual Mode Operation**: Switch between automated and manual monitoring modes, allowing for flexibility in how transactions are reviewed and managed.
+  
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/20fc7a21-c8ee-4747-b4d3-ceba1a669ced" alt="Kawatch-Dashboard">
+</div>
 
 ## Conclusion
 KAWATCH is set to transform the landscape of transaction monitoring and financial crime prevention. By offering a user-friendly interface, customizable monitoring solutions, and leveraging advanced machine learning algorithms, our platform empowers organizations to detect and respond to suspicious activities with precision and speed. With a focus on transparency, flexibility, and continuous improvement, we invite users to join us in building a secure and compliant financial ecosystem. Together, let's harness the power of technology to safeguard financial integrity and drive innovation in the fight against financial crimes.
