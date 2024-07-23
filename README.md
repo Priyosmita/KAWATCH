@@ -2,6 +2,12 @@
 
 ## Visit <a href="https://kawatch-wkqh.vercel.app/" target="_blank">KAWATCH</a>
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2686dd3a-1566-4e76-b52f-5bf9adb1e02b" alt="Kawatch logo">
+</div>
+
+## <a href="https://medium.com/@daspriyosmita2003/kawatch-where-innovation-meets-integrity-4978970e3ea1" target="_blank">Medium Blog-Link</a>
+
 
 ## Introduction
 KAWATCH is transforming the landscape of financial security with its cutting-edge anti-money laundering (AML) solutions. Our advanced platform empowers organizations to detect and prevent financial crimes with unparalleled precision. Utilizing real-time transaction monitoring, automated alerts, and sophisticated machine learning algorithms, KAWATCH ensures compliance and safeguards against fraudulent activities. Join us in pioneering the future of financial integrity and security.
