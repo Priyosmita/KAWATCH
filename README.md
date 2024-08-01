@@ -67,4 +67,4 @@ KAWATCH is set to transform the landscape of transaction monitoring and financia
 
 <br/>
 <br/>
-### [Backened](https://github.com/Priyosmita/KAWATCH-Backend)
+### [Backend Link](https://github.com/Priyosmita/KAWATCH-Backend)
